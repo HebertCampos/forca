@@ -74,7 +74,14 @@ class Forca:
         self.palavra = palavra
     
     def acertarLetra(self, letra):
+        acertos = []
+        erros = []
         self.letra = letra
+        if letra in self.palavra:
+            acertos.append[letra]
+        else: erros.append[letra]
+        print(f'letras erradas:\n{[l for l in erros]}')
+        print(f'letras certas:\n{[l for l in acertos]}')
     
     def perdeu(self):
         pass
