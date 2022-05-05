@@ -1,5 +1,7 @@
 # Jogo da forca
 
+import random
+
 forca = [
     '''
     -------
@@ -85,4 +87,11 @@ class Forca:
     
     def status(self):
         pass
-        
+    
+def pegando_palavra():
+    with open('palavras.txt', 'rt') as f:
+        banco = f.readlines()
+    return banco[random.randint(0, len(banco))].strip()
+
+def main():
+    jogo = Forca(pegando_palavra())
