@@ -2,7 +2,7 @@
 
 import random
 
-forca = [
+desenho = [
     '''
     -------
     |     |
@@ -79,12 +79,15 @@ class Forca:
         self.letra = letra
         if letra in self.palavra:
             acertos.append[letra]
-        else: erros.append[letra]
-        print(f'letras erradas:\n{[l for l in erros]}')
-        print(f'letras certas:\n{[l for l in acertos]}')
+        else: 
+            erros.append[letra]
+        #print(f'letras erradas:\n{erros}')
+        #print(f'letras certas:\n{acertos}')
     
     def perdeu(self):
-        pass
+        if len(desenho) > len(self.letra):
+            return 0
+        else: return 1
     
     def ganhou(self):
         pass
@@ -102,3 +105,13 @@ def pegando_palavra():
 
 def main():
     jogo = Forca(pegando_palavra())
+    
+    while True:
+        letra = input('digite letra: ')
+        jogo.acertarLetra(letra)
+        if jogo.perdeu() == 0:
+            break
+        
+
+if __name__ == "__main__":
+    main()
